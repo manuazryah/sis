@@ -29,12 +29,12 @@ $this->params['breadcrumbs'][] = $this->title;
                             'model' => $model,
                             'attributes' => [
                                 'id',
-                                [
-                                    'attribute' => 'location',
-                                    'value' => function ($data) {
-                                        return Locations::findOne($data->location)->location_name;
-                                    },
-                                ],
+//                                [
+//                                    'attribute' => 'location',
+//                                    'value' => function ($data) {
+//                                        return Locations::findOne($data->location)->location_name;
+//                                    },
+//                                ],
                                 'item_code',
                                 'item_name',
 //                                'item_type',
@@ -44,12 +44,12 @@ $this->params['breadcrumbs'][] = $this->title;
                                         return Tax::findOne($data->tax_id)->name;
                                     },
                                 ],
-                                [
-                                    'attribute' => 'base_unit_id',
-                                    'value' => function ($data) {
-                                        return BaseUnit::findOne($data->base_unit_id)->name;
-                                    },
-                                ],
+//                                [
+//                                    'attribute' => 'base_unit_id',
+//                                    'value' => function ($data) {
+//                                        return BaseUnit::findOne($data->base_unit_id)->name;
+//                                    },
+//                                ],
                                 'MRP',
 //                                'retail_price',
                                 'purchase_price',

@@ -26,7 +26,7 @@
                     </select>
                 </div>
                 <div class="col-md-3" style="padding:0px;">
-                    <input type="text" id="salesinvoicedetails-qty_val-<?= $next ?>" value="" class="form-control salesinvoicedetails-qty_val" name="create[qty_val][<?= $next ?>]" readonly>
+                    <input type="text" id="salesinvoicedetails-qty_val-<?= $next ?>" value="" class="form-control salesinvoicedetails-qty_val" name="create[qty_val][<?= $next ?>]" tabindex="-1" readonly>
                 </div>
                 <div class="col-md-1" style="padding:0px;">
                     <p style="padding: 7px 0px 0px 3px;color: #585656;">Kg</p>
@@ -88,7 +88,7 @@
     </td>
     <td>
         <input type="hidden" id="sales-inventory-<?= $next ?>" class="sales-inventory" name="create[inventory][<?= $next ?>]" value="1" checked="checked"/>
-        <input type="checkbox" id="salesinvoicedetails-inventory-<?= $next ?>" class="salesinvoicedetails-inventory" name="" value="1" checked="checked" title="Checked for Inventory"/>
+        <input type="checkbox" id="salesinvoicedetails-inventory-<?= $next ?>" class="salesinvoicedetails-inventory" name="" value="1" checked="checked" title="Checked for Inventory" tabindex="-1"/>
         <a id="del" class="" ><i class="fa fa-times sales-invoice-delete" title="Remove Row"></i></a>
     </td>
 </tr>

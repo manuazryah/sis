@@ -277,11 +277,11 @@
                             <tr style="background: #4e5254;color: white !important;">
                                 <th style="width: 10%;font-size: 12px;padding: 10px 5px;">SL No.</th>
                                 <th style="width: 21%;font-size: 12px;padding: 10px 2px;">DESCRIPTION</th>
-                                <th style="width: 13%;font-size: 12px;padding: 10px 2px;">UNIT PRICE</th>
-                                <th style="width: 11%;font-size: 12px;padding: 10px 2px;">QTY(Kg)</th>
-                                <th style="width: 15%;font-size: 12px;padding: 10px 2px;">CARTON</th>
-                                <th style="width: 15%;font-size: 12px;padding: 10px 2px;">AMOUNT</th>
-                                <th style="width: 15%;font-size: 12px;padding: 10px 2px;">TAX AMOUNT</th>
+                                <th style="width: 13%;font-size: 12px;padding: 10px 5px;text-align: right;">UNIT PRICE</th>
+                                <th style="width: 11%;font-size: 12px;padding: 10px 5px;text-align: right;">QTY(Kg)</th>
+                                <th style="width: 15%;font-size: 12px;padding: 10px 5px;text-align: right;">CARTON</th>
+                                <th style="width: 15%;font-size: 12px;padding: 10px 5px;text-align: right;">AMOUNT</th>
+                                <th style="width: 15%;font-size: 12px;padding: 10px 5px;text-align: right;">TAX AMOUNT</th>
                             </tr>
                             <?php
                             $p = 0;
@@ -299,11 +299,11 @@
                                 <tr style="<?= $count != $p ? 'border-bottom: 1px solid #a09c9c;' : '' ?>">
                                     <td style="width: 10%;font-size: 11px;padding: 10px 5px;"><?= $p ?></td>
                                     <td style="width: 21%;font-size: 11px;padding: 10px 2px;"><?= $value->item_name ?></td>
-                                    <td style="width: 13%;font-size: 11px;padding: 10px 2px;"><?= $value->rate ?></td>
-                                    <td style="width: 11%;font-size: 11px;padding: 10px 2px;"><?= $value->qty ?></td>
-                                    <td style="width: 15%;font-size: 11px;padding: 10px 2px;"><?= $value->carton ?></td>
-                                    <td style="width: 15%;font-size: 11px;padding: 10px 2px;"><?= Yii::$app->SetValues->NumberFormat(round($value->amount - $value->discount_amount, 2)); ?></td>
-                                    <td style="width: 15%;font-size: 11px;padding: 10px 2px;"><?= $value->tax_amount ?></td>
+                                    <td style="width: 13%;font-size: 11px;padding: 10px 5px;text-align: right;"><?= $value->rate ?></td>
+                                    <td style="width: 11%;font-size: 11px;padding: 10px 5px;text-align: right;"><?= $value->qty ?></td>
+                                    <td style="width: 15%;font-size: 11px;padding: 10px 5px;text-align: right;"><?= $value->carton ?></td>
+                                    <td style="width: 15%;font-size: 11px;padding: 10px 5px;text-align: right;"><?= Yii::$app->SetValues->NumberFormat(round($value->amount - $value->discount_amount, 2)); ?></td>
+                                    <td style="width: 15%;font-size: 11px;padding: 10px 5px;text-align: right;"><?= $value->tax_amount ?></td>
                                 </tr>
 
                             <?php } ?>
@@ -339,8 +339,8 @@
                                 <th style="width: 13%;font-size: 12px;padding: 10px 2px;"></th>
                                 <th style="width: 11%;font-size: 12px;padding: 10px 2px;"></th>
                                 <th style="width: 15%;font-size: 12px;padding: 10px 2px;text-align: center;">Sub Total</th>
-                                <th style="width: 15%;font-size: 12px;padding: 10px 2px;text-align: center;"><?= Yii::$app->SetValues->NumberFormat(round($total_amount, 2)) . ' (S$)'; ?></th>
-                                <th style="width: 15%;font-size: 12px;padding: 10px 2px;text-align: center;"><?= Yii::$app->SetValues->NumberFormat(round($total_tax, 2)) . ' (S$)'; ?></th>
+                                <th style="width: 15%;font-size: 12px;padding: 10px 5px;text-align: right;"><?= Yii::$app->SetValues->NumberFormat(round($total_amount, 2)) . ' (S$)'; ?></th>
+                                <th style="width: 15%;font-size: 12px;padding: 10px 5px;text-align: right;"><?= Yii::$app->SetValues->NumberFormat(round($total_tax, 2)) . ' (S$)'; ?></th>
                             </tr>
                             <tr style="">
                                 <th style="width: 10%;font-size: 12px;padding: 10px 2px;"></th>
@@ -349,7 +349,7 @@
                                 <th style="width: 11%;font-size: 12px;padding: 10px 2px;"></th>
                                 <th style="width: 15%;font-size: 12px;padding: 10px 2px;background: #4e5254;color: white;text-align: center;">Total</th>
                                 <th style="width: 15%;font-size: 12px;padding: 10px 2px;background: #4e5254;"></th>
-                                <th style="width: 15%;font-size: 12px;padding: 10px 2px;background: #4e5254;color: white;text-align: center;"><?= Yii::$app->SetValues->NumberFormat(round(($total_amount + $total_tax), 2)) . ' (S$)'; ?></th>
+                                <th style="width: 15%;font-size: 12px;padding: 10px 5px;background: #4e5254;color: white;text-align: right;"><?= Yii::$app->SetValues->NumberFormat(round(($total_amount + $total_tax), 2)) . ' (S$)'; ?></th>
                             </tr>
                             <tr style="">
                                 <th colspan="7" style="width: 100%;font-size: 12px;padding: 10px 2px;text-align: right;"><?php echo ucwords(Yii::$app->NumToWord->ConvertNumberToWords(round($grand_total, 2))) . ' Only'; ?></th>

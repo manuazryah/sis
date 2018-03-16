@@ -40,7 +40,7 @@ class ItemMaster extends \yii\db\ActiveRecord {
      */
     public function rules() {
         return [
-            [['MRP', 'item_type', 'tax_id', 'base_unit_id', 'item_name', 'purchase_price'], 'required'],
+            [['MRP', 'item_type', 'tax_id', 'item_name', 'purchase_price'], 'required'],
             [['item_type', 'tax_id', 'base_unit_id', 'hsn', 'location', 'status', 'CB', 'UB'], 'integer'],
             [['MRP', 'retail_price', 'purchase_price', 'item_cost', 'whole_sale_price'], 'number'],
             [['DOC', 'DOU'], 'safe'],

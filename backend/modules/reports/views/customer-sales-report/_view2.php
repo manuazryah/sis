@@ -34,10 +34,10 @@ if (!empty($result)) {
             <td><?= $value['sales_invoice_date'] ?></td>
             <td><?= $value['po_no'] ?></td>
             <td><?= $value['po_date'] ?></td>
-            <td><?= $value['amount'] ?></td>
-            <td><?= $value['discount_amount'] ?></td>
-            <td><?= $value['tax_amount'] ?></td>
-            <td><?= $value['order_amount'] ?></td>
+            <td style="text-align: right;"><?= $value['amount'] ?></td>
+            <td style="text-align: right;"><?= $value['discount_amount'] ?></td>
+            <td style="text-align: right;"><?= $value['tax_amount'] ?></td>
+            <td style="text-align: right;"><?= $value['order_amount'] ?></td>
         </tr>
         <?php
         $amount_tot += $value['amount'];
@@ -48,10 +48,10 @@ if (!empty($result)) {
     ?>
     <tr>
         <th colspan="4" style="text-align: center;">Total Amount</th>
-        <th><?= Yii::$app->SetValues->NumberFormat(round($amount_tot, 2)) . ' (S$)'; ?></th>
-        <th><?= Yii::$app->SetValues->NumberFormat(round($disc_tot, 2)) . ' (S$)'; ?></th>
-        <th><?= Yii::$app->SetValues->NumberFormat(round($tax_tot, 2)) . ' (S$)'; ?></th>
-        <th><?= Yii::$app->SetValues->NumberFormat(round($sale_tot, 2)) . ' (S$)'; ?></th>
+        <th style="text-align: right;"><?= Yii::$app->SetValues->NumberFormat(round($amount_tot, 2)) . ' (S$)'; ?></th>
+        <th style="text-align: right;"><?= Yii::$app->SetValues->NumberFormat(round($disc_tot, 2)) . ' (S$)'; ?></th>
+        <th style="text-align: right;"><?= Yii::$app->SetValues->NumberFormat(round($tax_tot, 2)) . ' (S$)'; ?></th>
+        <th style="text-align: right;"><?= Yii::$app->SetValues->NumberFormat(round($sale_tot, 2)) . ' (S$)'; ?></th>
     </tr>
     <?php
 }

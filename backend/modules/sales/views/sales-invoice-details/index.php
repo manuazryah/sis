@@ -82,9 +82,18 @@ $this->params['breadcrumbs'][] = $this->title;
 //                                    'filter' => ArrayHelper::map(common\models\Employee::find()->asArray()->all(), 'id', 'name'),
 //                                    'filterOptions' => array('id' => "salesman"),
 //                                ],
-                                'order_amount',
-                                'amount_payed',
-                                'due_amount',
+                                [
+                                    'attribute' => 'order_amount',
+                                    'contentOptions' => ['style' => 'text-align: right;'],
+                                ],
+                                [
+                                    'attribute' => 'amount_payed',
+                                    'contentOptions' => ['style' => 'text-align: right;'],
+                                ],
+                                [
+                                    'attribute' => 'due_amount',
+                                    'contentOptions' => ['style' => 'text-align: right;'],
+                                ],
                                 [
                                     'attribute' => 'due_date',
                                     'value' => function($model) {

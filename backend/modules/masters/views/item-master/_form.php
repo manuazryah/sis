@@ -33,18 +33,13 @@ use common\models\ProductCategory;
         </div>
     </div>
     <div class="row">
-        <div class='col-md-4 col-sm-4 col-xs-12 left_padd'>
+        <div class='col-md-6 col-sm-6 col-xs-12 left_padd'>
             <?= $form->field($model, 'item_name')->textInput(['maxlength' => true]) ?>
 
         </div>
-        <div class='col-md-4 col-sm-4 col-xs-12 left_padd'>
+        <div class='col-md-6 col-sm-6 col-xs-12 left_padd'>
             <?php $taxes = ArrayHelper::map(Tax::findAll(['status' => 1]), 'id', 'name'); ?>
             <?= $form->field($model, 'tax_id')->dropDownList($taxes, ['prompt' => '-Choose a Tax-']) ?>
-
-        </div>
-        <div class='col-md-4 col-sm-4 col-xs-12 left_padd'>
-            <?php $uom = ArrayHelper::map(BaseUnit::findAll(['status' => 1]), 'id', 'value'); ?>
-            <?= $form->field($model, 'base_unit_id')->dropDownList($uom, ['prompt' => '-Choose a UOM-']) ?>
 
         </div>
     </div>
@@ -72,3 +67,21 @@ use common\models\ProductCategory;
     <?php ActiveForm::end(); ?>
 
 </div>
+<script>
+    $(document).ready(function () {
+
+        $(document).on('change', '#itemmaster-item_type', function () {
+            var type = $(this).val();
+            if (type != '') {
+                if (type == 1) {
+                    $("label[for='itemmaster-mrp']").text("Price / Kg");
+                }
+                if (type == 2) {
+                    $("label[for='itemmaster-mrp']").text("Price / Piece");
+                }
+            } else {
+                $("label[for='itemmaster-mrp']").text("Price");
+            }
+        });
+    });
+</script>

@@ -51,7 +51,7 @@ class Employee extends ActiveRecord implements IdentityInterface {
             [['photo'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg'],
             [['email'], 'email'],
             [['post_id', 'status', 'CB', 'UB'], 'integer'],
-            [['DOC', 'DOU', 'phone'], 'safe'],
+            [['DOC', 'DOU', 'phone', 'address'], 'safe'],
             [['user_name'], 'string', 'max' => 30],
             [['password'], 'string', 'max' => 300],
             [['phone'], 'string', 'max' => 13],

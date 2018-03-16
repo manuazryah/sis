@@ -35,9 +35,17 @@ $this->params['breadcrumbs'][] = $this->title;
                         ['class' => 'kartik\grid\SerialColumn'],
                         'item_name',
                         'item_code',
-                        'available_carton',
-                        'available_weight',
-                        'available_pieces',
+                        ['attribute' => 'available_carton',
+                            'contentOptions' => ['style' => 'text-align: right;'],
+                        ],
+                        [
+                            'attribute' => 'available_weight',
+                            'contentOptions' => ['style' => 'text-align: right;'],
+                        ],
+                        [
+                            'attribute' => 'available_pieces',
+                            'contentOptions' => ['style' => 'text-align: right;'],
+                        ],
                     ];
                     echo GridView::widget([
                         'dataProvider' => $dataProvider,

@@ -31,7 +31,19 @@ use kartik\date\DatePicker;
         $model->createdFrom = $from;
         $model->createdTo = $to;
         ?>
-        <div class="col-md-5">
+        <div class="col-md-4">
+            <?php
+            $items = \common\models\ItemMaster::find()->where(['status' => 1])->all();
+            ?>
+            <select id="StockRegistersSearch-id" class="form-control" name="StockRegistersSearch[item_id]" aria-invalid="false">
+                <option value="">-Item-</option>
+                <?php foreach ($items as $item) { ?>
+                    <option value="<?= $item->id ?>" <?= $item_code == $item->id ? 'selected' : '' ?>><?= $item->item_code . ' - ' . $item->item_name ?></option>
+                <?php }
+                ?>
+            </select>
+        </div>
+        <div class="col-md-3">
             <?=
             $form->field($model, 'createdFrom')->widget(DatePicker::classname(), [
                 'type' => DatePicker::TYPE_INPUT,
@@ -43,7 +55,7 @@ use kartik\date\DatePicker;
             ])->label(FALSE);
             ?>
         </div>
-        <div class="col-md-5">
+        <div class="col-md-3">
             <?=
             $form->field($model, 'createdTo')->widget(DatePicker::classname(), [
                 'type' => DatePicker::TYPE_INPUT,

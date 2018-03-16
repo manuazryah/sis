@@ -27,6 +27,12 @@ class StockReportController extends \yii\web\Controller {
         $searchModel = new StockRegistersSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
         if (Yii::$app->request->post()) {
+            if (isset($_POST['StockRegistersSearch']['item_id']) && $_POST['StockRegistersSearch']['item_id'] != '') {
+                $item_code = $_POST['StockRegistersSearch']['item_id'];
+                $dataProvider->query->andWhere(['item_id' => $item_code]);
+            } else {
+                $item_code = '';
+            }
             if (isset($_POST['StockRegistersSearch']['createdFrom']) && $_POST['StockRegistersSearch']['createdFrom'] != '') {
                 $from = $_POST['StockRegistersSearch']['createdFrom'];
                 $dataProvider->query->andWhere(['>=', 'document_date', $from . '00:00:00']);
@@ -42,6 +48,7 @@ class StockReportController extends \yii\web\Controller {
         } else {
             $from = '';
             $to = '';
+            $item_code = '';
         }
         $dataProvider->pagination->pageSize = 20;
         return $this->render('index', [
@@ -49,6 +56,7 @@ class StockReportController extends \yii\web\Controller {
                     'dataProvider' => $dataProvider,
                     'from' => $from,
                     'to' => $to,
+                    'item_code' => $item_code,
         ]);
     }
 

@@ -53,10 +53,10 @@
                                     <td style="border: 1px solid;font-size: 12px;padding: 7px 3px;"><?= $value['sales_invoice_date'] ?></td>
                                     <td style="border: 1px solid;font-size: 12px;padding: 7px 3px;"><?= $value['po_no'] ?></td>
                                     <td style="border: 1px solid;font-size: 12px;padding: 7px 3px;"><?= $value['po_date'] ?></td>
-                                    <td style="border: 1px solid;font-size: 12px;padding: 7px 3px;"><?= $value['amount'] ?></td>
-                                    <td style="border: 1px solid;font-size: 12px;padding: 7px 3px;"><?= $value['discount_amount'] ?></td>
-                                    <td style="border: 1px solid;font-size: 12px;padding: 7px 3px;"><?= $value['tax_amount'] ?></td>
-                                    <td style="border: 1px solid;font-size: 12px;padding: 7px 3px;"><?= $value['order_amount'] ?></td>
+                                    <td style="border: 1px solid;font-size: 12px;padding: 7px 3px;text-align: right;"><?= $value['amount'] ?></td>
+                                    <td style="border: 1px solid;font-size: 12px;padding: 7px 3px;text-align: right;"><?= $value['discount_amount'] ?></td>
+                                    <td style="border: 1px solid;font-size: 12px;padding: 7px 3px;text-align: right;"><?= $value['tax_amount'] ?></td>
+                                    <td style="border: 1px solid;font-size: 12px;padding: 7px 3px;text-align: right;"><?= $value['order_amount'] ?></td>
                                 </tr>
                                 <?php
                                 $amount_tot += $value['amount'];
@@ -71,10 +71,10 @@
                             ?>
                             <tr style="border: 1px solid;">
                                 <th colspan="4" style="text-align: right;padding: 7px 3px;border: 1px solid;">Total Amount</th>
-                                <th style="padding: 7px 3px;border: 1px solid;"><?= Yii::$app->SetValues->NumberFormat(round($amount_tot, 2)) . ' (S$)'; ?></th>
-                                <th style="padding: 7px 3px;border: 1px solid;"><?= Yii::$app->SetValues->NumberFormat(round($dic_tot, 2)) . ' (S$)'; ?></th>
-                                <th style="padding: 7px 3px;border: 1px solid;"><?= Yii::$app->SetValues->NumberFormat(round($tax_tot, 2)) . ' (S$)'; ?></th>
-                                <th style="padding: 7px 3px;border: 1px solid;"><?= Yii::$app->SetValues->NumberFormat(round($sale_tot, 2)) . ' (S$)'; ?></th>
+                                <th style="padding: 7px 3px;border: 1px solid;text-align: right;"><?= Yii::$app->SetValues->NumberFormat(round($amount_tot, 2)) . ' (S$)'; ?></th>
+                                <th style="padding: 7px 3px;border: 1px solid;text-align: right;"><?= Yii::$app->SetValues->NumberFormat(round($dic_tot, 2)) . ' (S$)'; ?></th>
+                                <th style="padding: 7px 3px;border: 1px solid;text-align: right;"><?= Yii::$app->SetValues->NumberFormat(round($tax_tot, 2)) . ' (S$)'; ?></th>
+                                <th style="padding: 7px 3px;border: 1px solid;text-align: right;"><?= Yii::$app->SetValues->NumberFormat(round($sale_tot, 2)) . ' (S$)'; ?></th>
                             </tr>
                             <?php
                         }
@@ -83,10 +83,10 @@
                 ?>
                 <tr style="border: 1px solid;">
                     <th colspan="4" style="text-align: right;padding: 7px 3px;border: 1px solid;">Grand Total</th>
-                    <th style="padding: 7px 3px;border: 1px solid;"><?= Yii::$app->SetValues->NumberFormat(round($grand_total_amount, 2)) . ' (S$)'; ?></th>
-                    <th style="padding: 7px 3px;border: 1px solid;"><?= Yii::$app->SetValues->NumberFormat(round($grand_total_disc, 2)) . ' (S$)'; ?></th>
-                    <th style="padding: 7px 3px;border: 1px solid;"><?= Yii::$app->SetValues->NumberFormat(round($grand_total_tax, 2)) . ' (S$)'; ?></th>
-                    <th style="padding: 7px 3px;border: 1px solid;"><?= Yii::$app->SetValues->NumberFormat(round($grand_total_sale, 2)) . ' (S$)'; ?></th>
+                    <th style="padding: 7px 3px;border: 1px solid;text-align: right;"><?= Yii::$app->SetValues->NumberFormat(round($grand_total_amount, 2)) . ' (S$)'; ?></th>
+                    <th style="padding: 7px 3px;border: 1px solid;text-align: right;"><?= Yii::$app->SetValues->NumberFormat(round($grand_total_disc, 2)) . ' (S$)'; ?></th>
+                    <th style="padding: 7px 3px;border: 1px solid;text-align: right;"><?= Yii::$app->SetValues->NumberFormat(round($grand_total_tax, 2)) . ' (S$)'; ?></th>
+                    <th style="padding: 7px 3px;border: 1px solid;text-align: right;"><?= Yii::$app->SetValues->NumberFormat(round($grand_total_sale, 2)) . ' (S$)'; ?></th>
                 </tr>
             </tbody>
         </table>

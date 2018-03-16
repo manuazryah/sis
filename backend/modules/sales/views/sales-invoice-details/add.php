@@ -182,7 +182,7 @@ if (isset($estimate)) {
                                         </select>
                                     </div>
                                     <div class="col-md-3" style="padding:0px;">
-                                        <input type="text" id="salesinvoicedetails-qty_val-1" value="" class="form-control salesinvoicedetails-qty_val" name="create[qty_val][1]" readonly>
+                                        <input type="text" id="salesinvoicedetails-qty_val-1" value="" class="form-control salesinvoicedetails-qty_val" name="create[qty_val][1]" tabindex="-1" readonly>
                                     </div>
                                     <div class="col-md-1" style="padding:0px;">
                                         <p style="padding: 7px 0px 0px 3px;color: #585656;">Kg</p>
@@ -252,7 +252,7 @@ if (isset($estimate)) {
                         </td>-->
                         <td>
                             <input type="hidden" id="sales-inventory-1" class="sales-inventory" name="create[inventory][1]" value="1" checked="checked"/>
-                            <input type="checkbox" id="salesinvoicedetails-inventory-1" class="salesinvoicedetails-inventory" name="" value="1" checked="checked" title="Checked for Inventory"/>
+                            <input type="checkbox" id="salesinvoicedetails-inventory-1" class="salesinvoicedetails-inventory" name="" value="1" checked="checked" title="Checked for Inventory" tabindex="-1"/>
                             <a id="del" class="" ><i class="fa fa-times sales-invoice-delete" title="Remove Row"></i></a>
                         </td>
                     </tr>
@@ -262,11 +262,11 @@ if (isset($estimate)) {
                     <thead>
                         <tr>
                             <th data-priority="3">Item Total</th>
-                            <th data-priority="6" style="width: 18%;"><input type="text" id="qty_total" class="amount-receipt-1" name="qty_total" style="width: 100%;" readonly/></th>
-                            <th data-priority="6" style="width: 8%;"><input type="hidden" id="sub_total" class="amount-receipt-1" name="sub_total" style="width: 100%;" readonly/></th>
-                            <th data-priority="6" style="width: 14%;"><input type="text" id="discount_sub_total" class="amount-receipt-1"  name="discount_sub_total" style="width: 100%;" readonly/></th>
-                            <th data-priority="6" style="width: 14%;"><input type="text" id="tax_sub_total" class="amount-receipt-1"  name="tax_sub_total" style="width: 100%;" readonly/></th>
-                            <th data-priority="6" style="width: 8%;"><input type="text" id="order_sub_total" class="amount-receipt-1"  name="order_sub_total" style="width: 100%;" readonly/></th>
+                            <th data-priority="6" style="width: 18%;"><input type="text" id="qty_total" class="amount-receipt-1" name="qty_total" style="width: 100%;" tabindex="-1" readonly/></th>
+                            <th data-priority="6" style="width: 8%;"><input type="hidden" id="sub_total" class="amount-receipt-1" name="sub_total" style="width: 100%;" tabindex="-1" readonly/></th>
+                            <th data-priority="6" style="width: 14%;"><input type="text" id="discount_sub_total" class="amount-receipt-1"  name="discount_sub_total" style="width: 100%;" tabindex="-1" readonly/></th>
+                            <th data-priority="6" style="width: 14%;"><input type="text" id="tax_sub_total" class="amount-receipt-1"  name="tax_sub_total" style="width: 100%;" tabindex="-1" readonly/></th>
+                            <th data-priority="6" style="width: 8%;"><input type="text" id="order_sub_total" class="amount-receipt-1"  name="order_sub_total" style="width: 100%;" tabindex="-1" readonly/></th>
                             <th data-priority="1" style="width: 8%;"></th>
                             <th data-priority="1" style="width: 50px;   "></th>
                         </tr>
@@ -290,11 +290,11 @@ if (isset($estimate)) {
                             <!--<table style="float:right;text-align: left;">-->
                                 <tr>
                                     <td><label class="control-label">Round off</label></td>
-                                    <td><input type="text" id="round_of" class="amount-receipt form-control"  name="round_of" style="width: 100%;" autocomplete="off" value="<?= sprintf('%0.2f', 0); ?>"/></td>
+                                    <td><input type="text" style="text-align:right" id="round_of" class="amount-receipt form-control"  name="round_of" style="width: 100%;" autocomplete="off" value="<?= sprintf('%0.2f', 0); ?>"/></td>
                                 </tr>
                                 <tr>
                                     <td><label class="control-label">Cash</label></td>
-                                    <td><input type="text" id="cash_amount" class="amount-receipt form-control"  name="cash_amount" style="width: 100%;" autocomplete="off" value="<?= sprintf('%0.2f', 0); ?>" readonly /></td>
+                                    <td><input type="text" style="text-align:right" id="cash_amount" class="amount-receipt form-control"  name="cash_amount" style="width: 100%;" autocomplete="off" value="<?= sprintf('%0.2f', 0); ?>" readonly /></td>
                                 </tr>
 <!--                                <tr>
                                     <td>Card</td>
@@ -303,11 +303,11 @@ if (isset($estimate)) {
 
                                 <tr>
                                     <td><label class="control-label">Amount Paid</label></td>
-                                    <td><input type="text" id="payed_amount" class="amount-receipt form-control"  name="payed_amount" autocomplete="off" style="width: 100%;"/></td></td>
+                                    <td><input type="text" style="text-align:right" id="payed_amount" class="amount-receipt form-control"  name="payed_amount" autocomplete="off" style="width: 100%;"/></td></td>
                                 </tr>
                                 <tr>
                                     <td> <label class="control-label">Balance</label></td>
-                                    <td><input type="text" id="balance" class="amount-receipt form-control"  name="balance" style="width: 100%;" readonly/></td>
+                                    <td><input type="text" style="text-align:right" id="balance" class="amount-receipt form-control"  name="balance" style="width: 100%;" readonly/></td>
                                 </tr>
                                 <tr class="due-date-row">
                                     <td><label class="control-label">Due Date</label></td>
@@ -441,7 +441,7 @@ if (isset($estimate)) {
             var avail_pieces_tot = $('#salesinvoicedetails-avail_pieces-' + current_row_id).val();
             var item = $('#salesinvoicedetails-item_id-' + current_row_id).val();
             if (item == '') {
-                $('.salesinvoicedetails-qty').val('');
+                $('.salesinvoicedetails-qty-' + current_row_id).val('');
                 e.preventDefault();
             }
             if (qty != "" && item != '' && rate != '') {
@@ -598,6 +598,12 @@ if (isset($estimate)) {
         $(document).on('keyup', '#round_of', function () {
             balanceCalculation();
         });
+        $(document).on('keydown', '#salesinvoicemaster-email,#salesinvoicemaster-cc,#salesinvoicemaster-contact_number,#salesinvoicemaster-po_no,#salesinvoicemaster-ship_to_adress,#salesinvoicemaster-delivery_address,.salesinvoicedetails-qty,.salesinvoicedetails-rate,#payed_amount,#balance,#due-date,.salesinvoicedetails-discount_value,.salesinvoicedetails-line_total,#round_of,#salesinvoicemaster-general_terms,.salesinvoicedetails-qty_val,#qty_total,#discount_sub_total,#tax_sub_total,#order_sub_total,.salesinvoicedetails-inventory', function (event) {
+            if (event.keyCode == 13) {
+                event.preventDefault();
+                return false;
+            }
+        });
     });
     function itemChange(item_id, current_row_id, next_row_id) {
         var next = parseInt(next_row_id) + 1;
@@ -674,7 +680,8 @@ if (isset($estimate)) {
             data: {item_id: item, qty: qty, type: type},
             url: '<?= Yii::$app->homeUrl; ?>sales/sales-invoice-details/get-sales-quantity',
             success: function (data) {
-                $('#salesinvoicedetails-qty_val-' + current_row_id).val(data);
+                var res = $.parseJSON(data);
+                $('#salesinvoicedetails-qty_val-' + current_row_id).val(res.result['tot-weight']);
             }
         });
         return true;

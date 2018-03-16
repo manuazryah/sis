@@ -40,27 +40,30 @@ $this->params['breadcrumbs'][] = $this->title;
                         'columns' => [
                             ['class' => 'yii\grid\SerialColumn'],
 //                            'id',
-                            [
-                                'attribute' => 'location',
-                                'format' => 'raw',
-                                'filter' => Html::activeDropDownList($searchModel, 'location', ArrayHelper::map(Locations::find()->all(), 'id', 'location_name'), ['class' => 'form-control', 'id' => 'name', 'prompt' => '']),
-                                'value' => function ($data) {
-                                    return Locations::findOne($data->location)->location_name;
-                                },
-                            ],
+//                            [
+//                                'attribute' => 'location',
+//                                'format' => 'raw',
+//                                'filter' => Html::activeDropDownList($searchModel, 'location', ArrayHelper::map(Locations::find()->all(), 'id', 'location_name'), ['class' => 'form-control', 'id' => 'name', 'prompt' => '']),
+//                                'value' => function ($data) {
+//                                    return Locations::findOne($data->location)->location_name;
+//                                },
+//                            ],
                             'item_code',
                             'item_name',
 //                            'item_type',
 //                            'tax_id',
+//                            [
+//                                'attribute' => 'base_unit_id',
+//                                'format' => 'raw',
+//                                'filter' => Html::activeDropDownList($searchModel, 'base_unit_id', ArrayHelper::map(BaseUnit::find()->all(), 'id', 'name'), ['class' => 'form-control', 'id' => 'name', 'prompt' => '']),
+//                                'value' => function ($data) {
+//                                    return BaseUnit::findOne($data->base_unit_id)->name;
+//                                },
+//                            ],
                             [
-                                'attribute' => 'base_unit_id',
-                                'format' => 'raw',
-                                'filter' => Html::activeDropDownList($searchModel, 'base_unit_id', ArrayHelper::map(BaseUnit::find()->all(), 'id', 'name'), ['class' => 'form-control', 'id' => 'name', 'prompt' => '']),
-                                'value' => function ($data) {
-                                    return BaseUnit::findOne($data->base_unit_id)->name;
-                                },
+                                'attribute' => 'MRP',
+                                'contentOptions' => ['style' => 'text-align: right;'],
                             ],
-                            'MRP',
                             // 'retail_price',
                             // 'purchase_price',
 //                            'item_cost',

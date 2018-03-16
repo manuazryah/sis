@@ -116,7 +116,7 @@ table.table tr.filters{
 }
 
 table.table tr td:last-child {
-    display: inline-flex;
+    /*display: inline-flex;*/
     border: 0;
 }
 table.table tr td:last-child a {

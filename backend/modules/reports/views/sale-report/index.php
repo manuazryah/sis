@@ -74,19 +74,30 @@ $this->params['breadcrumbs'][] = $this->title;
                         'sales_invoice_date',
                         'po_no',
                         'po_date',
-                        'amount',
+                        [
+                            'attribute' => 'amount',
+                            'contentOptions' => ['style' => 'text-align: right;'],
+                        ],
                         [
                             'attribute' => 'discount_amount',
                             'label' => 'Discount',
+                            'contentOptions' => ['style' => 'text-align: right;'],
                             'value' => function ($data) {
                                 return $data->discount_amount;
                             },
                         ],
-                        'tax_amount',
-                        'order_amount',
+                        [
+                            'attribute' => 'tax_amount',
+                            'contentOptions' => ['style' => 'text-align: right;'],
+                        ],
+                        [
+                            'attribute' => 'order_amount',
+                            'contentOptions' => ['style' => 'text-align: right;'],
+                        ],
                         [
                             'attribute' => 'amount_payed',
                             'label' => 'Paid',
+                            'contentOptions' => ['style' => 'text-align: right;'],
                             'value' => function ($data) {
                                 if ($data->amount_payed != '') {
                                     return $data->amount_payed;
@@ -98,6 +109,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         [
                             'attribute' => 'due_amount',
                             'label' => 'Balance',
+                            'contentOptions' => ['style' => 'text-align: right;'],
                             'value' => function ($data) {
                                 return $data->due_amount;
                             },

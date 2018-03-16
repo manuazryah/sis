@@ -26,7 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     <div class="row" style="margin-left: 0px;">
                         <div class="col-md-6">
 
-                            <?= $this->render('_search', ['model' => $searchModel, 'from' => $from, 'to' => $to]) ?>
+                            <?= $this->render('_search', ['model' => $searchModel, 'from' => $from, 'to' => $to, 'item_code' => $item_code]) ?>
 
                         </div>
                         <div class="col-md-6">
@@ -57,6 +57,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         ],
                         [
                             'attribute' => 'price',
+                            'contentOptions' => ['style' => 'text-align: right;'],
                             'value' => function ($model) {
                                 $info = \common\models\ItemMaster::findOne(['id' => $model->item_id]);
 
@@ -71,18 +72,21 @@ $this->params['breadcrumbs'][] = $this->title;
                         ],
                         [
                             'attribute' => 'weight_in',
+                            'contentOptions' => ['style' => 'text-align: right;'],
                             'value' => function ($model) {
                                 return isset($model->weight_in) ? $model->weight_in : '';
                             },
                         ],
                         [
                             'attribute' => 'weight_out',
+                            'contentOptions' => ['style' => 'text-align: right;'],
                             'value' => function ($model) {
                                 return isset($model->weight_out) ? $model->weight_out : '';
                             },
                         ],
                         [
                             'attribute' => 'cartoon_in',
+                            'contentOptions' => ['style' => 'text-align: right;'],
                             'label' => 'Cartons In',
                             'value' => function ($model) {
                                 return isset($model->cartoon_in) ? $model->cartoon_in : '';
@@ -90,6 +94,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         ],
                         [
                             'attribute' => 'cartoon_out',
+                            'contentOptions' => ['style' => 'text-align: right;'],
                             'label' => 'Cartons Out',
                             'value' => function ($model) {
                                 return isset($model->cartoon_out) ? $model->cartoon_out : '';
@@ -97,12 +102,14 @@ $this->params['breadcrumbs'][] = $this->title;
                         ],
                         [
                             'attribute' => 'piece_in',
+                            'contentOptions' => ['style' => 'text-align: right;'],
                             'value' => function ($model) {
                                 return isset($model->piece_in) ? $model->piece_in : '';
                             },
                         ],
                         [
                             'attribute' => 'piece_out',
+                            'contentOptions' => ['style' => 'text-align: right;'],
                             'value' => function ($model) {
                                 return isset($model->piece_out) ? $model->piece_out : '';
                             },

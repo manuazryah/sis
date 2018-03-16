@@ -49,7 +49,7 @@ class SalesInvoiceMasterSearch extends SalesInvoiceMaster {
      * @return ActiveDataProvider
      */
     public function search($params) {
-        $query = SalesInvoiceMaster::find();
+        $query = SalesInvoiceMaster::find()->orderBy(['id' => SORT_DESC]);
 
         // add conditions that should always apply here
 
